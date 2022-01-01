@@ -11,6 +11,9 @@ install:
 	cp target/$(target)/$(prog) /usr/bin/$(prog)
 
 all: build install
- 
+
+uninstall:
+	rm /usr/bin/$(prog)
+
 help:
 	@echo "usage: make $(prog) [debug=1]"
