@@ -8,9 +8,8 @@ build:
 	cargo build $(release)
 
 install:
+	build
 	cp target/$(target)/$(prog) /usr/bin/$(prog)
-
-all: build install
 
 uninstall:
 	rm /usr/bin/$(prog)
