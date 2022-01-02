@@ -7,8 +7,7 @@ target :=release
 build:
 	cargo build $(release)
 
-install:
-	build
+install: build
 	cp target/$(target)/$(prog) /usr/bin/$(prog)
 
 uninstall:
