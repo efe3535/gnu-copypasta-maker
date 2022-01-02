@@ -11,7 +11,7 @@ fn main() {
         println!("What would you just like to interject?\t");
         io::stdin().read_line(&mut replace_with).expect("Failed to get input.");
     } else {
-        if args[1] != "--help" {
+        if args[1] != "--help" || args[1] != "-h" {
             replace_with.push_str(&args[1]);
         } else {
             println!("gnu copypasta maker!\nusage: {} < stirng to replace linux > or if no arguments you will be prompted for it.", args[0]);
