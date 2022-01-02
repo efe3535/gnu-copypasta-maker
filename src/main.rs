@@ -1,11 +1,30 @@
+use std::env;
 use std::io;
+use std::process::exit;
 
 fn main() {
     let mut replace_with = String::new();
+    
+    let args: Vec<String> = env::args().collect();
 
-    println!("What would you just like to interject?\t");
-    io::stdin().read_line(&mut replace_with).expect("Failed to get input.");
-
+    if args.len() < 2 {
+        println!("What would you just like to interject?\t");
+        io::stdin().read_line(&mut replace_with).expect("Failed to get input.");
+    } else {
+        if args[1] != "--help" {
+            replace_with.push_str(&args[1]);
+        } else {
+            println!("gnu copypasta maker!\nusage: {} < stirng to replace linux > or if no arguments you will be prompted for it.", args[0]);
+            exit(0)
+        }
+    }
+    
+    /*
+    else {
+        replace_with = String::from(args()[1]);
+    }
+    */
+    
     let joke = String::from("I'd just like to interject for a moment.  What you're referring to as Linux, is in fact, GNU/Linux, or as I've recently taken to calling it, GNU plus Linux. Linux is not an operating system unto itself, but rather another free component
 of a fully functioning GNU system made useful by the GNU corelibs, shell utilities and vital system components comprising a full OS as defined by POSIX.
 Many computer users run a modified version of the GNU system every day, without realizing it.  Through a peculiar turn of events, the version of GNU
