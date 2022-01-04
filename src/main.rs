@@ -12,13 +12,13 @@ fn main() {
         io::stdin().read_line(&mut replace_with).expect("Failed to get input.");
     } else {
         if args[1] != "--help" && args[1] != "-h" {
-            replace_with.push_str(&args[1]);
+            replace_with.push_str(&args[1].trim());
         } 
         if args[1].starts_with("--") && args[1] != "--help" && args[1] != "-h" {
             println!("bad usage, see {} --help", args[0]);
             exit(1);
         }
-        else {
+        else if args[1] == "--help" || args[1] == "-h" {
             println!("gnu copypasta maker!\nusage: {} < stirng to replace linux > or if no arguments you will be prompted for it.", args[0]);
             exit(0);
         }
