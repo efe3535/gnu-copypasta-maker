@@ -8,7 +8,7 @@ fn main() {
     let args: Vec<String> = env::args().collect();
 
     if args.len() < 2 {
-        println!("What would you just like to interject?\t");
+        println!("What would you like to interject?\t");
         io::stdin().read_line(&mut replace_with).expect("Failed to get input.");
     } else {
         if args[1] != "--help" && args[1] != "-h" {
